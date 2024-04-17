@@ -18,6 +18,6 @@ public class CourseModel {
     private String categoria;
     private Double precio;
     private Integer totalHoras;
-    private Integer rating;
+    private Double rating;
 
 }

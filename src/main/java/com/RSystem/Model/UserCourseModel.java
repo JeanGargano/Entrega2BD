@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 
 
-public class UserCourse {
+public class UserCourseModel {
 
     @Id
     private Integer idUserCourse;

@@ -15,6 +15,7 @@ public class TutorModel {
     @Id
     private Integer idTutor;
     private String nombre;
+    private String sexo;
     private String carrera;
     private String semestre;
 

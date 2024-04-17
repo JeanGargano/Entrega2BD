@@ -17,6 +17,7 @@ public class UserModel {
     @Id
     private Integer idUser;
     private String nombre;
+    private String sexo;
     private String carrera;
     private String semestre;
 
