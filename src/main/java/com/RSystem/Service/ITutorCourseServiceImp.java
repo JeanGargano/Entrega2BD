@@ -46,10 +46,10 @@ public class ITutorCourseServiceImp implements ITutorCourseService {
 
         String res = "";
 
-        Optional<TutorCourseModel> tutprCourseEncontrado = this.tutorCourseRepository.findById(idTutorCourse);
-        if (tutprCourseEncontrado.isPresent()) {
+        Optional<TutorCourseModel> tutorCourseEncontrado = this.tutorCourseRepository.findById(idTutorCourse);
+        if (tutorCourseEncontrado.isPresent()) {
 
-            TutorCourseModel tutorCourseActualizar = tutprCourseEncontrado.get();
+            TutorCourseModel tutorCourseActualizar = tutorCourseEncontrado.get();
             BeanUtils.copyProperties(tutorCourse, tutorCourseActualizar);
             this.tutorCourseRepository.save(tutorCourse);
             return "El documento tutor curso con id " + idTutorCourse + " fue actualizado correctamente";

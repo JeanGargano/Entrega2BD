@@ -1,6 +1,6 @@
 package com.RSystem.Repository;
 import com.RSystem.Model.RatingModel;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface IRatingRepository extends JpaRepository<RatingModel, Integer> {
+public interface IRatingRepository extends MongoRepository<RatingModel, Integer> {
 }

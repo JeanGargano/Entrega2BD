@@ -1,6 +1,6 @@
 package com.RSystem.Repository;
 import com.RSystem.Model.UserModel;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface IUserRepository extends JpaRepository<UserModel, Integer> {
+public interface IUserRepository extends MongoRepository<UserModel, Integer> {
 }

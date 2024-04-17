@@ -1,6 +1,6 @@
 package com.RSystem.Repository;
 import com.RSystem.Model.TutorModel;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface ITutorRepository extends JpaRepository<TutorModel, Integer> {
+public interface ITutorRepository extends MongoRepository<TutorModel, Integer> {
 }
