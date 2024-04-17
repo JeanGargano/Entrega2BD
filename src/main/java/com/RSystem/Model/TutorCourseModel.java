@@ -24,4 +24,6 @@ public class TutorCourseModel {
     @ManyToOne
     @Column (name = "idTutor")
     private TutorModel idTutor;
+
+    private Double calificacion;
 }
