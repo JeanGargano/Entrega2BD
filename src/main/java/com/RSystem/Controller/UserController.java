@@ -2,7 +2,7 @@ package com.RSystem.Controller;
 
 
 import com.RSystem.Model.UserModel;
-import com.RSystem.Service.IUserCourseServiceImp;
+import com.RSystem.Service.IUserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
     @Autowired
-    IUserCourseServiceImp userService;
+    IUserServiceImp userService;
     @PostMapping("/save")
     public ResponseEntity<String> crearUser(@RequestBody UserModel user){
         String resultadoHttp = userService.crearUser(user);

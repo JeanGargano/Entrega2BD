@@ -1,6 +1,5 @@
 package com.RSystem.Service;
 
-import com.RSystem.Model.CourseModel;
 import com.RSystem.Model.UserCourseModel;
 import com.RSystem.Repository.IUserCourseRepository;
 import org.springframework.beans.BeanUtils;
