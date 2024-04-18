@@ -27,12 +27,12 @@ public class TutorController {
         return  new ResponseEntity<>(tutores,HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{idTutor}")
     public ResponseEntity<String> elimiarTutorPorId(@RequestBody @PathVariable Integer idTutor) {
         String resultado = this.tutorService.eliminarTutorPorId(idTutor);
         return ResponseEntity.ok(resultado);
     }
-    @PutMapping("/put/idCourse")
+    @PutMapping("/put/{idTutor}")
     public ResponseEntity<String> actualizarTutotPorId(@RequestBody TutorModel tutor, @PathVariable Integer idTutor){
         String resultado = this.tutorService.actualizarTutorPorId(tutor, idTutor);
         return ResponseEntity.ok(resultado);

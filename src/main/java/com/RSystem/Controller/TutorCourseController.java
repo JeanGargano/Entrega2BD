@@ -1,6 +1,6 @@
 package com.RSystem.Controller;
 
-import com.RSystem.Model.CourseModel;
+
 import com.RSystem.Model.TutorCourseModel;
 import com.RSystem.Service.ITutorCourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@RequestMapping
+@RequestMapping("/tutorCourse")
 public class TutorCourseController {
     @Autowired
     ITutorCourseService tutorCourseService;
@@ -26,12 +26,12 @@ public class TutorCourseController {
         return  new ResponseEntity<>(tutoresCursos,HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{idTutorCourse}")
     public ResponseEntity<String> eliminarTutorCoursePorId(@RequestBody @PathVariable Integer idTutorCourse) {
         String resultado = this.tutorCourseService.eliminarTutorCoursePorId(idTutorCourse);
         return ResponseEntity.ok(resultado);
     }
-    @PutMapping("/put/idCourse")
+    @PutMapping("/put/{idTutorCourse}")
     public ResponseEntity<String> actualizarTutorCousePorId(@RequestBody TutorCourseModel tutorCourse, @PathVariable Integer idTutorCourse){
         String resultado = this.tutorCourseService.actualizarTutorCoursePorId(tutorCourse, idTutorCourse);
         return ResponseEntity.ok(resultado);

@@ -20,7 +20,7 @@ public class IUserServiceImp implements IUserService {
     @Override
     public String crearUser(UserModel user) {
         this.userRepository.save(user);
-        return "El usuario con id" + user.getIdUser() + " se ha registrado con exito";
+        return "El usuario con id " + user.getIdUser() + " se ha registrado con exito";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class IUserServiceImp implements IUserService {
     @Override
     public String eliminarUserPorId(Integer idUser) {
         this.userRepository.deleteById(idUser);
-        return "el usario con id " + idUser + " se ha eliminado con exito";
+        return "el usuario con id " + idUser + " se ha eliminado con exito";
     }
 
     @Override

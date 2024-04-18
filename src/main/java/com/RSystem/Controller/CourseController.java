@@ -24,12 +24,12 @@ public class CourseController {
         List<CourseModel> cursos = courseService.listarCourse();
         return  new ResponseEntity<>(cursos,HttpStatus.OK);
     }
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{idCourse}")
     public ResponseEntity<String> elimiarCursoPorId(@RequestBody @PathVariable Integer idCourse) {
         String resultado = this.courseService.eliminarCursoPorId(idCourse);
         return ResponseEntity.ok(resultado);
     }
-    @PutMapping("/put/idCourse")
+    @PutMapping("/put/{idCourse}")
     public ResponseEntity<String> actualizarCursoPorId(@RequestBody CourseModel course, @PathVariable Integer idCourse){
         String resultado = this.courseService.actualizarCursoPorId(course, idCourse);
         return ResponseEntity.ok(resultado);

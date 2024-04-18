@@ -24,12 +24,12 @@ public class UserController {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<String> eliminarUserPorId(@RequestBody @PathVariable Integer idUser) {
+    @DeleteMapping("/delete/{idUser}")
+    public ResponseEntity<String> eliminarUserPorId(@PathVariable Integer idUser) {
         String resultado = this.userService.eliminarUserPorId(idUser);
         return ResponseEntity.ok(resultado);
     }
-    @PutMapping("/put/idCourse")
+    @PutMapping("/put/{idUser}")
     public ResponseEntity<String> actualizarUserPorId(@RequestBody UserModel user, @PathVariable Integer idUser){
         String resultado = this.userService.actualizarUserPorId(user, idUser);
         return ResponseEntity.ok(resultado);

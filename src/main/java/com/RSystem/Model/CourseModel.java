@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class CourseModel {
 
     @Id
-    private String idCourse;
+    private Integer idCourse;
     private String nombre;
     private String categoria;
     private Double precio;

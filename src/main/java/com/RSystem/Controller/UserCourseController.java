@@ -1,8 +1,6 @@
 package com.RSystem.Controller;
 
-import com.RSystem.Model.CourseModel;
 import com.RSystem.Model.UserCourseModel;
-import com.RSystem.Service.ICourseService;
 import com.RSystem.Service.IUserCourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,15 +26,14 @@ public class UserCourseController {
             return  new ResponseEntity<>(usersCursos,HttpStatus.OK);
         }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<String> elimiarUserCoursePorId(@RequestBody @PathVariable Integer idUserCourse) {
-        String resultado = this.userCourseService.eliminarUserCursoPorId(idUserCourse);
-        return ResponseEntity.ok(resultado);
+        @DeleteMapping("/delete/{idUserCourse}")
+        public ResponseEntity<String> elimiarUserCoursePorId(@RequestBody @PathVariable Integer idUserCourse) {
+            String resultado = this.userCourseService.eliminarUserCoursePorId(idUserCourse);
+            return ResponseEntity.ok(resultado);
     }
-    @PutMapping("/put/idCourse")
-    public ResponseEntity<String> actualizarUserCoursePorId(@RequestBody UserCourseModel userCourse, @PathVariable Integer idUserCourse){
-        String resultado = this.userCourseService.actualizarCursoPorId(userCourse, idUserCourse);
-        return ResponseEntity.ok(resultado);
+        @PutMapping("/put/{idUserCourse}")
+        public ResponseEntity<String> actualizarUserCoursePorId(@RequestBody UserCourseModel userCourse, @PathVariable Integer idUserCourse){
+            String resultado = this.userCourseService.actualizarUserCoursePorId(userCourse, idUserCourse);
+            return ResponseEntity.ok(resultado);
     }
     }
-
