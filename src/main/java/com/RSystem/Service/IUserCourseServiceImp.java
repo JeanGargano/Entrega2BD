@@ -35,13 +35,13 @@ public class IUserCourseServiceImp implements  IUserCourseService {
     }
 
     @Override
-    public String eliminarUserCursoPorId(Integer idUserCourse) {
+    public String eliminarUserCoursePorId(Integer idUserCourse) {
         this.userCourseRepository.deleteById(idUserCourse);
         return "El usuario curso con id " + idUserCourse + " fue eliminado eliminado";
     }
 
     @Override
-    public String actualizarCursoPorId(UserCourseModel userCourse, Integer idUserCourse) {
+    public String actualizarUserCoursePorId(UserCourseModel userCourse, Integer idUserCourse) {
         String res = "";
 
         Optional<UserCourseModel> userCourseEncontrado = this.userCourseRepository.findById(idUserCourse);

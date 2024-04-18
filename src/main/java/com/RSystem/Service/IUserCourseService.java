@@ -12,7 +12,7 @@ public interface IUserCourseService {
 
     Optional<UserCourseModel> obtenerUserCoursePorId(Integer idUserCourse);
 
-    String eliminarUserCursoPorId(Integer idUserCourse);
+    String eliminarUserCoursePorId(Integer idUserCourse);
 
-    String actualizarCursoPorId(UserCourseModel userCourse, Integer idUserCourse);
+    String actualizarUserCoursePorId(UserCourseModel userCourse, Integer idUserCourse);
 }

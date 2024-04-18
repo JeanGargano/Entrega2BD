@@ -1,5 +1,6 @@
 package com.RSystem.Controller;
 
+import com.RSystem.Model.CourseModel;
 import com.RSystem.Model.TutorModel;
 import com.RSystem.Service.ITutorServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,17 @@ public class TutorController {
     public ResponseEntity<List<TutorModel>> listarTutor(){
         List<TutorModel> tutores = tutorService.listarTutor();
         return  new ResponseEntity<>(tutores,HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> elimiarTutorPorId(@RequestBody @PathVariable Integer idTutor) {
+        String resultado = this.tutorService.eliminarTutorPorId(idTutor);
+        return ResponseEntity.ok(resultado);
+    }
+    @PutMapping("/put/idCourse")
+    public ResponseEntity<String> actualizarTutotPorId(@RequestBody TutorModel tutor, @PathVariable Integer idTutor){
+        String resultado = this.tutorService.actualizarTutorPorId(tutor, idTutor);
+        return ResponseEntity.ok(resultado);
     }
 
 }

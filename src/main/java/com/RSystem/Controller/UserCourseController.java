@@ -28,5 +28,15 @@ public class UserCourseController {
             return  new ResponseEntity<>(usersCursos,HttpStatus.OK);
         }
 
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> elimiarUserCoursePorId(@RequestBody @PathVariable Integer idUserCourse) {
+        String resultado = this.userCourseService.eliminarUserCursoPorId(idUserCourse);
+        return ResponseEntity.ok(resultado);
+    }
+    @PutMapping("/put/idCourse")
+    public ResponseEntity<String> actualizarUserCoursePorId(@RequestBody UserCourseModel userCourse, @PathVariable Integer idUserCourse){
+        String resultado = this.userCourseService.actualizarCursoPorId(userCourse, idUserCourse);
+        return ResponseEntity.ok(resultado);
+    }
     }
 

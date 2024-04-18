@@ -1,6 +1,4 @@
 package com.RSystem.Controller;
-
-
 import com.RSystem.Model.UserModel;
 import com.RSystem.Service.IUserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +22,17 @@ public class UserController {
     public ResponseEntity<List<UserModel>> ListarUser(){
         List<UserModel> users = userService.listarUser();
         return new ResponseEntity<>(users, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> eliminarUserPorId(@RequestBody @PathVariable Integer idUser) {
+        String resultado = this.userService.eliminarUserPorId(idUser);
+        return ResponseEntity.ok(resultado);
+    }
+    @PutMapping("/put/idCourse")
+    public ResponseEntity<String> actualizarUserPorId(@RequestBody UserModel user, @PathVariable Integer idUser){
+        String resultado = this.userService.actualizarUserPorId(user, idUser);
+        return ResponseEntity.ok(resultado);
     }
 
 }

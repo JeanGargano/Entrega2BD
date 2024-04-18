@@ -47,9 +47,9 @@ public class ICourseServiceImp implements ICourseService {
         Optional<CourseModel> courseEncontrado = this.courseRepository.findById(idCourse);
         if (courseEncontrado.isPresent()) {
 
-            CourseModel couseActaulizar = courseEncontrado.get();
-            BeanUtils.copyProperties(course, couseActaulizar);
-            this.courseRepository.save(couseActaulizar);
+            CourseModel courseActualizar = courseEncontrado.get();
+            BeanUtils.copyProperties(course, courseActualizar);
+            this.courseRepository.save(courseActualizar);
             return "El curso con id " + idCourse + " fue actualizado correctamente";
         }else{
 
