@@ -21,7 +21,7 @@ public class ITutorServiceImp implements ITutorService {
 
     public String crearTutor(TutorModel tutor) {
         this.tutorRepository.save(tutor);
-        return "El tutor co id" + tutor.getIdTutor() + "fue creado correctamente";
+        return "El tutor co id" + tutor.getIdTutor() + " fue creado correctamente";
     }
 
 
@@ -37,7 +37,7 @@ public class ITutorServiceImp implements ITutorService {
 
     public String eliminarTutorPorId(Integer idTutor) {
         this.tutorRepository.deleteById(idTutor);
-        return "El tutor con id" + idTutor + "fue eliminado correctamente";
+        return "El tutor con id" + idTutor + " fue eliminado correctamente";
     }
 
     @Override

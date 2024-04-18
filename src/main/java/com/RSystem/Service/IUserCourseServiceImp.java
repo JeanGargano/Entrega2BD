@@ -37,7 +37,7 @@ public class IUserCourseServiceImp implements  IUserCourseService {
     @Override
     public String eliminarUserCursoPorId(Integer idUserCourse) {
         this.userCourseRepository.deleteById(idUserCourse);
-        return "El usuario curso con id " + idUserCourse + "fue eliminado eliminado";
+        return "El usuario curso con id " + idUserCourse + " fue eliminado eliminado";
     }
 
     @Override

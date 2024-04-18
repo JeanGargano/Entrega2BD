@@ -20,7 +20,7 @@ public class ICourseServiceImp implements ICourseService {
 
     public String crearCurso(CourseModel course) {
         this.courseRepository.save(course);
-        return "El curso con id " + course.getIdCourse() + "fue creado exitosamente";
+        return "El curso con id " + course.getIdCourse() + " fue creado exitosamente";
     }
 
 

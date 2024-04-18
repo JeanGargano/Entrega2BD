@@ -20,7 +20,7 @@ public class IUserServiceImp implements IUserService {
     @Override
     public String crearUser(UserModel user) {
         this.userRepository.save(user);
-        return "El usuario con id" + user.getIdUser() + "se ha registrado con exito";
+        return "El usuario con id" + user.getIdUser() + " se ha registrado con exito";
     }
 
     @Override
