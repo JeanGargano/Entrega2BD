@@ -57,4 +57,9 @@ public class ICourseServiceImp implements ICourseService {
         }
         return res;
     }
+
+    @Override
+    public List<CourseModel> cursosConRatings() {
+        return this.courseRepository.cursosConRatings();
+    }
 }

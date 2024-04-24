@@ -34,4 +34,12 @@ public class CourseController {
         String resultado = this.courseService.actualizarCursoPorId(course, idCourse);
         return ResponseEntity.ok(resultado);
     }
+
+    @GetMapping("/get/cursosRatings")
+    public ResponseEntity<List<CourseModel>> listarCursosRatings(){
+
+        List<CourseModel> cursos = courseService.cursosConRatings();
+        return  new ResponseEntity<>(cursos,HttpStatus.OK);
+    }
+
 }

@@ -15,4 +15,6 @@ public interface ICourseService {
     String eliminarCursoPorId(Integer idCourse);
 
     String actualizarCursoPorId(CourseModel course, Integer idCourse);
+
+    List<CourseModel> cursosConRatings();
 }
