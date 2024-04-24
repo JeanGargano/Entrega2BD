@@ -25,5 +25,5 @@ public class TutorCourseModel {
     @Column (name = "idTutor")
     private TutorModel idTutor;
 
-    private Double calificacion;
+    //private Double calificacion;
 }
