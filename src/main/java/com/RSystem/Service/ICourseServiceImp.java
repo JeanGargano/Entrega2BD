@@ -1,5 +1,6 @@
 package com.RSystem.Service;
 import com.RSystem.Model.CourseModel;
+import com.RSystem.Model.TutorModel;
 import com.RSystem.Repository.ICourseRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +30,6 @@ public class ICourseServiceImp implements ICourseService {
     }
 
 
-    public Optional<CourseModel> obtenerCoursePorId(Integer idCourse) {
-        return this.courseRepository.findById(idCourse);
-    }
-
 
     public String eliminarCursoPorId(Integer idCourse) {
         this.courseRepository.deleteById(idCourse);
@@ -61,5 +58,11 @@ public class ICourseServiceImp implements ICourseService {
     @Override
     public List<CourseModel> cursosConRatings() {
         return this.courseRepository.cursosConRatings();
+    }
+
+    @Override
+    public CourseModel obtenerCoursePorId(Integer idCourse) {
+        Optional<CourseModel> courseOptional = this.courseRepository.findById(idCourse);
+        return courseOptional.orElse(null);
     }
 }

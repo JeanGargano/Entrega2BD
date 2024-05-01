@@ -1,4 +1,5 @@
 package com.RSystem.Service;
+
 import com.RSystem.Model.UserModel;
 import com.RSystem.Repository.IUserRepository;
 import org.springframework.beans.BeanUtils;
@@ -51,7 +52,7 @@ public class IUserServiceImp implements IUserService {
             BeanUtils.copyProperties(user, userActualizar);
             this.userRepository.save(userActualizar);
             return "El usuario con id " + idUser + " fue actualizado correctamente";
-        }else{
+        } else {
 
             res = "No existe";
         }

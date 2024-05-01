@@ -1,7 +1,6 @@
 package com.RSystem.Service;
 
 import com.RSystem.Model.TutorModel;
-import com.RSystem.Model.UserCourseModel;
 import com.RSystem.Repository.ITutorRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,10 +29,6 @@ public class ITutorServiceImp implements ITutorService {
     }
 
 
-    public Optional<TutorModel> obtenerTutorPorId(Integer idTutor) {
-        return this.tutorRepository.findById(idTutor);
-    }
-
 
     public String eliminarTutorPorId(Integer idTutor) {
         this.tutorRepository.deleteById(idTutor);
@@ -56,5 +51,10 @@ public class ITutorServiceImp implements ITutorService {
             res = "No existe";
         }
         return res;
+    }
+
+    public TutorModel obtenerTutorPorId(Integer idTutor) {
+        Optional<TutorModel> tutorOptional = this.tutorRepository.findById(idTutor);
+        return tutorOptional.orElse(null);
     }
 }

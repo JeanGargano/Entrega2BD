@@ -10,9 +10,9 @@ public interface ITutorService {
 
     List<TutorModel> listarTutor();
 
-    Optional<TutorModel> obtenerTutorPorId(Integer idTutor);
-
     String eliminarTutorPorId(Integer idTutor);
 
     String actualizarTutorPorId(TutorModel tutor, Integer idTutor);
+
+    TutorModel obtenerTutorPorId(Integer idTutor);
 }

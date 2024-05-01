@@ -10,11 +10,11 @@ public interface ICourseService {
 
     List<CourseModel> listarCourse();
 
-    Optional<CourseModel> obtenerCoursePorId(Integer idCourse);
-
     String eliminarCursoPorId(Integer idCourse);
 
     String actualizarCursoPorId(CourseModel course, Integer idCourse);
 
     List<CourseModel> cursosConRatings();
+
+    CourseModel obtenerCoursePorId(Integer idCourse);
 }
