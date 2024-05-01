@@ -14,5 +14,6 @@ public interface ITutorService {
 
     String actualizarTutorPorId(TutorModel tutor, Integer idTutor);
 
-    TutorModel obtenerTutorPorId(Integer idTutor);
+    Optional<TutorModel> obtenerTutorPorId(Integer idTutor);
+
 }

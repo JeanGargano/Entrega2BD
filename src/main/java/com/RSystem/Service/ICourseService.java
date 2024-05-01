@@ -16,5 +16,7 @@ public interface ICourseService {
 
     List<CourseModel> cursosConRatings();
 
-    CourseModel obtenerCoursePorId(Integer idCourse);
+    Optional<CourseModel> obtenerCoursePorId(Integer idCourse);
+
+    List<String> consulta2();
 }

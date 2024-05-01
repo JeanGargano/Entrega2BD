@@ -53,8 +53,9 @@ public class ITutorServiceImp implements ITutorService {
         return res;
     }
 
-    public TutorModel obtenerTutorPorId(Integer idTutor) {
-        Optional<TutorModel> tutorOptional = this.tutorRepository.findById(idTutor);
-        return tutorOptional.orElse(null);
+    public Optional<TutorModel> obtenerTutorPorId(Integer idTutor) {
+        return this.tutorRepository.findById(idTutor);
     }
+
 }
+

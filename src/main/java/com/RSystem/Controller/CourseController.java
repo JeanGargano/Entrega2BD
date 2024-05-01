@@ -41,4 +41,10 @@ public class CourseController {
         return  new ResponseEntity<>(cursos,HttpStatus.OK);
     }
 
+    @GetMapping("get/consulta2")
+    public ResponseEntity<List<String>> listarConsulta2(){
+        List<String> cursos = courseService.consulta2();
+        return  new ResponseEntity<>(cursos,HttpStatus.OK);
+    }
+
 }
