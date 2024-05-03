@@ -14,7 +14,7 @@ public interface ICourseService {
 
     String actualizarCursoPorId(CourseModel course, Integer idCourse);
 
-    List<CourseModel> cursosConRatings();
+    List<String> cursosConRatings();
 
     Optional<CourseModel> obtenerCoursePorId(Integer idCourse);
 

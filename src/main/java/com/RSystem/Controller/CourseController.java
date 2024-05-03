@@ -35,9 +35,9 @@ public class CourseController {
     }
 
     @GetMapping("/get/cursosRatings")
-    public ResponseEntity<List<CourseModel>> listarCursosRatings(){
+    public ResponseEntity<List<String>> listarCursosRatings(){
 
-        List<CourseModel> cursos = courseService.cursosConRatings();
+        List<String> cursos = courseService.cursosConRatings();
         return  new ResponseEntity<>(cursos,HttpStatus.OK);
     }
 

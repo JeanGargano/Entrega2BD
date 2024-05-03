@@ -55,7 +55,7 @@ public class ICourseServiceImp implements ICourseService {
     }
 
     @Override
-    public List<CourseModel> cursosConRatings() {
+    public List<String> cursosConRatings() {
         return this.courseRepository.cursosConRatings();
     }
 

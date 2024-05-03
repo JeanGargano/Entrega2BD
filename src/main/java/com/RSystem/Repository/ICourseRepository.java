@@ -7,8 +7,11 @@ import java.util.List;
 
 public interface ICourseRepository extends MongoRepository<CourseModel, Integer>{
 
-    @Aggregation("{ $match: { rating: { $exists: true } } }")
-    List<CourseModel> cursosConRatings();
+    @Aggregation({
+            "{ $match: { rating: { $exists: true } } }",
+            "{ $project: { nombreConRating: { $concat: [ '$nombre', ' - ', { $toString: '$rating' } ] } } }"
+    })
+    List<String> cursosConRatings();
 
 
     //Consulta para listar tutores con cursos con ratings
